@@ -183,15 +183,15 @@ public class Game {
 
     public static void main(String[] args) {
         Human human = new Human();
-        CyberDemon cyberDaemon = new CyberDemon();
+        CyberDemon cyberDemon = new CyberDemon();
         Barlog barlog = new Barlog();
         Elf elf = new Elf();
 
         human.initialize();
-        cyberDaemon.initialize();
+        cyberDemon.initialize();
         barlog.initialize();
         elf.initialize();
 
-        tournament(human, cyberDaemon, barlog, elf);
+        tournament(human, cyberDemon, barlog, elf);
     }
 }
