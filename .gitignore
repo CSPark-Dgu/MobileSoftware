@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java
 
 *.c
-
+*.py
 ### Java ###
 # Compiled class file
 *.class
