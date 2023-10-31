@@ -27,8 +27,8 @@ int main(void) {
     return 0;
 }
 
-void initialize_array(int* arr) {
-    for (int i = 1; i < 101; i++) {
+void initialize_array(int* arr){
+    for (int i = 0; i < 101; i++) {
         arr[i] = 0;
     }
 }
