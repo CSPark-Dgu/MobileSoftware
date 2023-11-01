@@ -47,6 +47,7 @@ class Human extends Character{
     protected int getMaxhitpoint(){
         return 200;
     }
+    
     public String whoAmI(){
         return "Human";
     }
@@ -171,9 +172,9 @@ public class Game {
         }
     }
 
-    public static void tournament(Character hu, Character cyber, Character bar, Character el) {
-        Character semiFinalWinner1 = battle(hu, cyber);
-        Character semiFinalWinner2 = battle(bar, el);
+    public static void tournament(Character a, Character b, Character c, Character d) {
+        Character semiFinalWinner1 = battle(a, b);
+        Character semiFinalWinner2 = battle(c, d);
         semiFinalWinner1.initialize();
         semiFinalWinner2.initialize();
         Character finalWinner = battle(semiFinalWinner1, semiFinalWinner2);
@@ -182,6 +183,8 @@ public class Game {
     }
 
     public static void main(String[] args) {
+        Random random = new Random();
+
         Human human = new Human();
         CyberDemon cyberDemon = new CyberDemon();
         Barlog barlog = new Barlog();
@@ -192,6 +195,20 @@ public class Game {
         barlog.initialize();
         elf.initialize();
 
-        tournament(human, cyberDemon, barlog, elf);
+        Character[] characters = {human, cyberDemon, barlog, elf};
+
+        for (int i = characters.length - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            Character temp = characters[i];
+            characters[i] = characters[j];
+            characters[j] = temp;
+        }
+
+        Character a = characters[0];
+        Character b = characters[1];
+        Character c = characters[2];
+        Character d = characters[3];
+
+        tournament(a, b, c, d);
     }
 }
